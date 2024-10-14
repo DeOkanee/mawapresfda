@@ -1,0 +1,105 @@
+// bin-handler.js
+
+// Contoh data mahasiswa
+const mahasiswaData = [
+  {
+    no: 1,
+    nama: "I Made Oka Kembarisna",
+    nim: "2211031354",
+    prodi: "Ilmu Komputer",
+    jenisPrestasi: "Web Developer",
+    peringkat: "Juara 1",
+    sertifikat: "Sertifikat/1222.jpg",
+  },
+  {
+    no: 2,
+    nama: "Yosa Rio",
+    nim: "2211031355", // Ganti NIM untuk keunikan
+    prodi: "Ilmu Komputer",
+    jenisPrestasi: "Mobile Developer",
+    peringkat: "Juara 1",
+    sertifikat: "Sertifikat/contoh.jpg",
+  },
+  {
+    no: 1,
+    nama: "I Made Oka Kembarisna",
+    nim: "2211031354",
+    prodi: "Ilmu Komputer",
+    jenisPrestasi: "Web Developer",
+    peringkat: "Juara 1",
+    sertifikat: "Sertifikat/1222.jpg",
+  },
+  {
+    no: 2,
+    nama: "Yosa Rio",
+    nim: "2211031355", // Ganti NIM untuk keunikan
+    prodi: "Ilmu Komputer",
+    jenisPrestasi: "Web Developer",
+    peringkat: "Juara 1",
+    sertifikat: "Sertifikat/1222.jpg",
+  },
+  {
+    no: 1,
+    nama: "I Made Oka Kembarisna",
+    nim: "2211031354",
+    prodi: "Ilmu Komputer",
+    jenisPrestasi: "Web Developer",
+    peringkat: "Juara 1",
+    sertifikat: "Sertifikat/1222.jpg",
+  },
+  {
+    no: 2,
+    nama: "Yosa Rio",
+    nim: "2211031355", // Ganti NIM untuk keunikan
+    prodi: "Ilmu Komputer",
+    jenisPrestasi: "Web Developer",
+    peringkat: "Juara 1",
+    sertifikat: "Sertifikat/1222.jpg",
+  },
+  {
+    no: 1,
+    nama: "I Made Oka Kembarisna",
+    nim: "2211031354",
+    prodi: "Ilmu Komputer",
+    jenisPrestasi: "Web Developer",
+    peringkat: "Juara 1",
+    sertifikat: "Sertifikat/1222.jpg",
+  },
+  {
+    no: 2,
+    nama: "Yosa Rio",
+    nim: "2211031355", // Ganti NIM untuk keunikan
+    prodi: "Ilmu Komputer",
+    jenisPrestasi: "Web Developer",
+    peringkat: "Juara 1",
+    sertifikat: "Sertifikat/1222.jpg",
+  },
+  // Tambahkan data mahasiswa lain jika diperlukan...
+];
+
+// Fungsi untuk menampilkan data mahasiswa di tabel
+function loadMahasiswa() {
+    const tableBody = document.querySelector("#mahasiswaTable tbody");
+    mahasiswaData.forEach((mahasiswa) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td class="No">${mahasiswa.no}</td>
+            <td class="Nama">${mahasiswa.nama}</td>
+            <td>${mahasiswa.prodi}</td>
+            <td>${mahasiswa.jenisPrestasi}</td>
+            <td>${mahasiswa.peringkat}</td>
+            <td>
+                <button onclick="showDownloadForm('${mahasiswa.nim}', '${mahasiswa.sertifikat}', '${mahasiswa.nama}', '${mahasiswa.jenisPrestasi}')">
+                    Download
+                </button>
+            </td>
+        `; // Perbaiki di sini
+        tableBody.appendChild(row);
+    });
+}
+
+
+// Panggil fungsi untuk memuat data mahasiswa saat halaman dimuat
+window.onload = loadMahasiswa;
+
+

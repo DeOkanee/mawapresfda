@@ -1,0 +1,30 @@
+-- Membuat database jika belum ada
+CREATE DATABASE IF NOT EXISTS sertifikat_mahasiswa_akademik24;
+
+-- Menggunakan database
+USE sertifikat_mahasiswa_akademik24;
+ 
+-- Membuat tabel mahasiswa
+CREATE TABLE IF NOT EXISTS mahasiswa (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nim VARCHAR(20) UNIQUE NOT NULL,
+    nama VARCHAR(100) NOT NULL,
+    prodi VARCHAR(50) NOT NULL
+);
+
+-- Membuat tabel prestasi
+CREATE TABLE IF NOT EXISTS prestasi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    mahasiswa_id INT,
+    jenis_prestasi VARCHAR(100) NOT NULL,
+    peringkat VARCHAR(50) NOT NULL,
+    FOREIGN KEY (mahasiswa_id) REFERENCES mahasiswa(id)
+);
+
+-- Membuat tabel sertifikat
+CREATE TABLE IF NOT EXISTS sertifikat (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    prestasi_id INT,
+    file_path VARCHAR(255) NOT NULL,
+    FOREIGN KEY (prestasi_id) REFERENCES prestasi(id)
+);

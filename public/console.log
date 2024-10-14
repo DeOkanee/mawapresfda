@@ -1,0 +1,18 @@
+function fetchMahasiswaData() {
+    return fetch('includes/get_mahasiswa.php')
+        .then(response => {
+            console.log(response); // Untuk memeriksa respons sebelum mengubahnya menjadi JSON
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text(); // Gunakan text() sementara untuk debugging
+        })
+        .then(text => {
+            console.log("Raw response:", text); // Cek apakah PHP mengeluarkan kesalahan atau teks aneh
+            return JSON.parse(text); // Lakukan parsing JSON setelah memastikan tidak ada error
+        })
+        .catch(error => {
+            console.error('Error fetching mahasiswa data:', error);
+            return [];
+        });
+}

@@ -1,0 +1,55 @@
+-- Membuat database jika belum ada
+CREATE DATABASE IF NOT EXISTS sertifikat_mahasiswa_akademik;
+
+-- Menggunakan database
+USE sertifikat_mahasiswa_akademik;
+
+-- Membuat tabel mahasiswa untuk tahun 2023
+CREATE TABLE IF NOT EXISTS mahasiswa_2023 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nim VARCHAR(20) UNIQUE NOT NULL,
+    nama VARCHAR(100) NOT NULL,
+    prodi VARCHAR(50) NOT NULL
+);
+
+-- Membuat tabel prestasi untuk tahun 2023
+CREATE TABLE IF NOT EXISTS prestasi_2023 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    mahasiswa_id INT,
+    jenis_prestasi VARCHAR(100) NOT NULL,
+    peringkat VARCHAR(50) NOT NULL,
+    FOREIGN KEY (mahasiswa_id) REFERENCES mahasiswa_2023(id)
+);
+
+-- Membuat tabel sertifikat untuk tahun 2023
+CREATE TABLE IF NOT EXISTS sertifikat_2023 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    prestasi_id INT,
+    file_path VARCHAR(255) NOT NULL,
+    FOREIGN KEY (prestasi_id) REFERENCES prestasi_2023(id)
+);
+
+-- Membuat tabel mahasiswa untuk tahun 2024
+CREATE TABLE IF NOT EXISTS mahasiswa_2024 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nim VARCHAR(20) UNIQUE NOT NULL,
+    nama VARCHAR(100) NOT NULL,
+    prodi VARCHAR(50) NOT NULL
+);
+
+-- Membuat tabel prestasi untuk tahun 2024
+CREATE TABLE IF NOT EXISTS prestasi_2024 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    mahasiswa_id INT,
+    jenis_prestasi VARCHAR(100) NOT NULL,
+    peringkat VARCHAR(50) NOT NULL,
+    FOREIGN KEY (mahasiswa_id) REFERENCES mahasiswa_2024(id)
+);
+
+-- Membuat tabel sertifikat untuk tahun 2024
+CREATE TABLE IF NOT EXISTS sertifikat_2024 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    prestasi_id INT,
+    file_path VARCHAR(255) NOT NULL,
+    FOREIGN KEY (prestasi_id) REFERENCES prestasi_2024(id)
+);

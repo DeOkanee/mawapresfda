@@ -1,0 +1,143 @@
+/* Styling untuk body */
+body {
+    margin: 0; /* Menghilangkan margin default */
+}
+
+.upload-container {
+    margin: 20px; /* Memberikan margin */
+    padding: 20px;
+    display: flex; /* Menggunakan Flexbox untuk kontainer */
+    flex-direction: column; /* Mengatur elemen anak dalam kolom */
+    justify-content: center; /* Pusatkan konten secara vertikal */
+    align-items: center; /* Pusatkan konten secara horizontal */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff; /* Warna biru */
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px; /* Jarak atas */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Warna biru lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek hover: naik sedikit */
+}
+
+.btn:active {
+    background-color: #004085; /* Warna lebih gelap saat ditekan */
+    transform: translateY(0); /* Efek saat ditekan */
+}
+/* Styling untuk pesan sukses */
+.message-success {
+    padding: 15px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Styling untuk container upload */
+.upload-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling teks heading */
+h1, h2 {
+    color: #343a40;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk input dan textarea */
+input[type="text"], input[type="file"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Styling tombol submit */
+input[type="submit"] {
+    width: 100%;
+    background-color: #28a745; /* Warna hijau */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838; /* Warna hijau lebih gelap saat hover */
+}
+
+/* Styling form container */
+.form-container {
+    margin-top: 20px;
+}
+
+/* CSS untuk Alert */
+.alert {
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* CSS untuk Tombol */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
